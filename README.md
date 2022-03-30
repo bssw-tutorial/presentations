@@ -34,29 +34,40 @@ On the title page of each presentation, we list the presenter's name (underlined
 
 The following are the general steps to follow for the production of presentations for a new tutorial event.  Some adaptation may be required for special circumstances.
 
-1. Reserve a DOI for the event on FigShare.  The DOI will be used here, in the License, Citation, and Acknowledgment slides, and also in the bssw-tutorial website.
-2. Create the `final-presentations/<event-label>` directory.
-3. In the event directory, create a `doi.txt` file which contains the reserved DOI URL.
-4. `git add` and `git commit` the `doi.txt` file.
-5. Update the `license-master.pptx` file with the appropriate citation and any other changes that might be required.  We prefer to use the same slide in all presentations unless there are good reasons for something special.
-6. Update the `agenda-master.pptx` file.  This is most easily done after adding the agenda to the event page on the website.  The agenda table on the web page can be copied and pasted into the Powerpoint table.  It works best if you create a Powerpoint table first in order to get the style from the slide template.
-7. Update `intro.pptx`
-   - Title slide (1) should list all presenters, then all helpers.  It should list the venue for the tutorial.
+### Prerequisites
+
+* The **`<event-label>`** for the tutorial.
+* The **agenda** for the tutorial should be set. The agenda appears in table form at the end of the `overview` presentation.  It is easiest to start from the agenda table as it appears on the tutorial website to create the Powerpoint version.
+* **DOI** reserved to publish presentations.  Historically, we've used FigShare, but Zenodo should also be fine.  The DOI is part of the citation on the License, Citation, and Acknowledgments slides. The DOI is also used in the tutorial website.
+
+### Process for Updating the Presentations
+
+*Some institutions have requirements for review prior to release for slide decks being presented by their employees.  In some cases, "R&R numbers" must be added to the slide deck as visible confirmation that they have been reviewed.  Where required, our convention is to place the R&R number in the lower right corner of the *title* slide of the deck, just above the colored band with the logos.  We use 12pt Arial.*
+
+1. Create the `final-presentations/<event-label>` directory.
+2. In the event directory, create a `doi.txt` file which contains the reserved DOI URL.
+3. `git add` and `git commit` the `doi.txt` file.
+4. Update the `license-master.pptx` file with the appropriate citation and any other changes that might be required.  We prefer to use the same slide in all presentations unless there are good reasons for something special.
+5. Update the `agenda-master.pptx` file. The agenda table on the web page can be copied and pasted into the Powerpoint table.  It works best if you create a Powerpoint table first in order to get the style from the slide template.
+6. Update `intro.pptx`
+   - Title slide (1) should list all presenters, then all helpers.  It should list the venue for the tutorial.  Remove unneeded R&R numbers that may be present.
    - License slide (2) should be *replaced* with the new one from `license-master.pptx`.  This is easily done by copy and pasting in the left-hand thumbnail view, then deleting the old license slide.
    - Update the About Us slide (3) with the presenters, then helpers.  Change head shots to match.  We keep a gallery of head shots in the `head-shots` folder.
    - Update the Hands-On Activities slide (9) as appropriate for the event.  You may find some alternatives in `intro-extras.pptx`.  Copy the current slide to `-extras` before changing it.
    - Update the We Want to Interact With You slide (11) as appropriate.
-8. Update the remaining presentations
-   - Title slide (1) should list presenter (underlined), pronouns, and affiliation. Update tutorial venue (should be consistent across all presentaitons, including `intro.pptx`). Update contributor list if necessary. 
+7. Update the remaining presentations
+   - Title slide (1) should list presenter (underlined), pronouns, and affiliation. Update tutorial venue (should be consistent across all presentations, including `intro.pptx`). Update contributor list if necessary. Remove unneeded R&R numbers that may be present.
    - License slide (2) should be *replaced* with the new one from `license-master.pptx`
-9. In the `overview.pptx` presentation, also *replace* the agenda slides at the end with the new one(s) from `agenda-master.pptx`.
-10. Presenters should revise any other content as desired.
-11. Update the `presentations.yml` file to reflect any new presentations or changed titles.  This file is used in the website.
+8. In the `overview.pptx` presentation, also *replace* the agenda slides at the end with the new one(s) from `agenda-master.pptx`.
+9. Presenters should revise any other content as desired.
+10. Update the `presentations.yml` file to reflect any new presentations or changed titles.  This file is used in the website.
 
 ## Quality Control
 
 Once the presentations have been updated, it is always a good idea to review the slides for quality.  Slides should be viewed in presentation mode to be sure you're seeing what the audience will see.
 
+* Check that the title slide (1) has the correct presenter, affiliation, and venue.  Check that *unnecessary* R&R numbers have been removed.
+* Check that the license slide (2) has the correct citation.
 * Confirm that the correct template is being used for all slides.
 * Make sure font sizes are large enough
 * Every slide should be numbered
