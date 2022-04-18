@@ -1,6 +1,7 @@
 label: Title
 intro: Introduction and Setup
 overview: Motivation and Overview of Best Practices in HPC Software Development
+overview-testing: Motivation and Overview
 agile: Agile Methodologies
 git-workflows: Git Workflows
 design: Scientific Software Design
@@ -11,3 +12,4 @@ testing-advanced: Testing Complex Software
 continuous-integration: Continuous Integration
 refactoring: Refactoring Scientific Software
 summary: Summary
+summary-testing: Summary
