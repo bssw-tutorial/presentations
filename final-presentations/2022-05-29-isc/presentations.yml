@@ -1,0 +1,35 @@
+# This file should be thought of as "cumulative".
+# It reflects all presentation in the repo at any moment, regardless of
+# whether we're using them in a given tutorial.
+#
+# This file is used in the website to map the presentation shorthands
+# (the filenames) to the full titles.
+# The website machinery simply takes the presentation shorthand as it
+# encounters it in the agenda, and looks up in presentations.yml
+# what the full title is.
+#
+# Here are the rules for changing presentations.yml:
+# - If you change the title of the presentation, update it here.
+# - If you add a new presentation file to the repository, add a row below.
+# - If we decide to retire a presentation file, its row gets removed.
+#
+# Case 3 will be rare and in most cases, there will be a period
+# of overlap where we'll maintain multiple, fairly divergent
+# versions of a presentation before retiring the original.
+
+label: Title
+intro: Introduction and Setup
+overview: Motivation and Overview of Best Practices in HPC Software Development
+overview-testing: Motivation and Overview
+agile: Agile Methodologies
+git-workflows: Git Workflows
+design: Scientific Software Design
+reproducibility: Improving Reproducibility Through Better Software Practices
+agile-redux: Agile Methodologies Redux
+testing-introduction2: Software Testing Introduction
+testing-introduction3: Software Testing Introduction
+testing-advanced: Testing Complex Software
+continuous-integration: Continuous Integration
+refactoring: Refactoring Scientific Software
+summary: Summary
+summary-testing: Summary
