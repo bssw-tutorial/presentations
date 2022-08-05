@@ -40,10 +40,11 @@ summary-testing: Summary
 #
 # Variants specifically for ATPESC
 #
-overview-a: Motivation and Overview of Best Practices in HPC Software Development (needs update)
-design-a: Scientific Software Design (needs update)
-spack: Introduction to Spack (needs update)
-testing-a: Software Testing (needs update)
+intro-a: Introduction
+overview-a: Motivation and Overview of Best Practices in HPC Software Development
+design-a: Scientific Software Design
+spack: "Spack: Package Management for HPC"
+testing-a: Software Testing and Verification
 lab-notebooks: Lab Notebooks for Computational Mathematics, Sciences, & Engineering
-computational-expts: Managing Computational Experiments (needs update)
-mining-tools: Understanding Your Software Development (needs update)
+computational-expts: Managing Computational Experiments
+mining-tools: Understanding Your Software Development
