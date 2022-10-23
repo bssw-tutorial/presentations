@@ -48,3 +48,7 @@ testing-a: Software Testing and Verification
 lab-notebooks: Lab Notebooks for Computational Mathematics, Sciences, & Engineering
 computational-expts: Managing Computational Experiments
 mining-tools: Understanding Your Software Development
+#
+# New to SC22
+#
+collaborative-sw-dev: "Collaborative Software Development"
