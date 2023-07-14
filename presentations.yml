@@ -58,3 +58,10 @@ collaborative-sw-dev: "Collaborative Software Development"
 packaging: "Software Packaging"
 testing-advanced-short: "Testing and Continuous Integration"
 packaging-short: "Software Packaging - Condensed Version"
+#
+packaging-pf: "Software Packaging"
+documentation: "Documenting your Software"
+#
+# Intersect versions
+#
+licensing-i: "Software Licensing"
