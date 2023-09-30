@@ -67,3 +67,7 @@ documentation: "Documenting your Software"
 # Intersect versions
 #
 licensing-i: "Software Licensing"
+#
+# New to SC23
+#
+rep-workflows: Reproducibility of Workflows
