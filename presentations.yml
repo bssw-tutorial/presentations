@@ -71,3 +71,13 @@ licensing-i: "Software Licensing"
 # New to SC23
 #
 rep-workflows: Reproducibility of Workflows
+#
+#  New to OSSFE 2024
+#
+repro-notebooks: Improving Reproducibility Through Better Software Practices
+#
+# New to SC25
+#
+dev-test-llm: Responsible Software Development with LLMs
+#
+testing: Software Testing and Verification
