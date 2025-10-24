@@ -1,0 +1,32 @@
+Input summary:
+NDIM = 2
+NX = 32
+lbnd = 0 0
+ubnd = 32 32
+nblk = 4
+boundaries = 12 12
+Npart = 16
+
+Blocks (one per line):
+blkID=0 [dim0: 0.000000,16.000000] [dim1: 0.000000,16.000000]
+blkID=1 [dim0: 0.000000,16.000000] [dim1: 16.000000,32.000000]
+blkID=2 [dim0: 16.000000,32.000000] [dim1: 0.000000,16.000000]
+blkID=3 [dim0: 16.000000,32.000000] [dim1: 16.000000,32.000000]
+
+Particles (one per line):
+particle 0: blkID=0 coords=4.000000,4.000000
+particle 1: blkID=0 coords=4.000000,12.000000
+particle 2: blkID=1 coords=4.000000,20.000000
+particle 3: blkID=1 coords=4.000000,28.000000
+particle 4: blkID=0 coords=12.000000,4.000000
+particle 5: blkID=0 coords=12.000000,12.000000
+particle 6: blkID=1 coords=12.000000,20.000000
+particle 7: blkID=1 coords=12.000000,28.000000
+particle 8: blkID=2 coords=20.000000,4.000000
+particle 9: blkID=2 coords=20.000000,12.000000
+particle 10: blkID=3 coords=20.000000,20.000000
+particle 11: blkID=3 coords=20.000000,28.000000
+particle 12: blkID=2 coords=28.000000,4.000000
+particle 13: blkID=2 coords=28.000000,12.000000
+particle 14: blkID=3 coords=28.000000,20.000000
+particle 15: blkID=3 coords=28.000000,28.000000

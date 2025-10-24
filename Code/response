@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    double lower_x;
+    double lower_y;
+    double upper_x;
+    double upper_y;
+} Block;
+
+Block* mesh_gen(double lower_bound, double upper_bound, int divisions, int *num_blocks) {
+    *num_blocks = divisions * divisions;
+    Block* blocks = (Block*)malloc((*num_blocks) * sizeof(Block));
+
+    double block_size = (upper_bound - lower_bound) / divisions;
+
+    int block_index = 0;
+    for (int i = 0; i < divisions; i++) {         // Row-wise traversal
+        for (int j = 0; j < divisions; j++) {     // Column-wise traversal
+            blocks[block_index].lower_x = lower_bound + j * block_size;
+            blocks[block_index].lower_y = lower_bound + i * block_size;
+            blocks[block_index].upper_x = blocks[block_index].lower_x + block_size;
+            blocks[block_index].upper_y = blocks[block_index].lower_y + block_size;
+            block_index++;
+        }
+    }
+
+    return blocks;
+}
+
+int main() {
+    double lower_bound = 0.0;
+    double upper_bound = 64.0;
+    int divisions = 4;    // 4x4 grid
+    int num_blocks;
+
+    Block* blocks = mesh_gen(lower_bound, upper_bound, divisions, &num_blocks);
+
+    for (int i = 0; i < num_blocks; i++) {
+        printf("Block %d:\n", i);
+        printf("  Lower Bound: (%.1f, %.1f)\n", blocks[i].lower_x, blocks[i].lower_y);
+        printf("  Upper Bound: (%.1f, %.1f)\n", blocks[i].upper_x, blocks[i].upper_y);
+    }
+
+    free(blocks);
+
+    return 0;
+}
+```
+
+### Key Points:
+
+- **Structure**: I've defined a `Block` struct to store the four coordinates of each block—a total of four `double` values per block.
+  
+- **`mesh_gen` Function**: 
+  - Takes `lower_bound`, `upper_bound`, `divisions` (divisions per axis), and a pointer to `num_blocks`.
+  - Initializes each block with calculated lower and upper coordinate bounds.
+  - Returns a dynamically allocated array of `Block` structures.
+
+- **`main` Function**:
+  - Sets the bounds and the number of divisions.
+  - Calls `mesh_gen` and receives the array of blocks.
+  - Iterates over each block to print its information.
+  - Frees the allocated memory to prevent memory leaks.
+
+Let me know if you have any more requirements or modifications!

@@ -1,0 +1,107 @@
+[[chat]]
+role = "user"
+content = """
+You are a code generator for a practice code to be written in C
+At every step I will explain what I want implemented, and I want you to 
+tell me what you understood the specification to be. Do not generated code until 
+I tell you.
+"""
+
+[[chat]]
+role = "assistant"
+content = """
+I am ready. Please give me the details """
+
+
+[[chat]]
+role = "user"
+content = """
+I want to create a two dimensional cartesian mesh which is divided into
+16 equal sized blocks. The lower left hand corner of the mesh has coordinates 
+0.0,0.0 and the upper right hand corner has coordinates 64.0 64.0. Assume that blocks
+are numbered in lexicographic order starting from the low left corner. Explain how would 
+you write the code, do not write the code yet."""
+
+
+
+Its outputs are:
+float domainbnds[NDIM][HIGH] coordinates of the lower left corner and 
+                                                   upper right corner of the domain
+int domainbc[NDIM] boundary conditions along each dimension
+
+
+data structure for a list of blocks
+For each block there is 
+int blkID – unique identity of the block, blocks should be numbered  in lexicographic order
+float bbnd[NDIM][HIGH] – coordinates of the lower left corner and upper right corner   
+
+
+Write a function “getBlkID”  that is given coordinates of a point in float pos[NDIM] and the list of blocks returned by the routine createMesh, and returns int blkID that is the block on which the point resides. If the point is outside the physical domain it returns a -1. 
+
+
+
+
+
+
+Write a routine createLattice to create a lattice of particles on the mesh
+Its inputs are:
+int NDIM  – dimensionality of the mesh
+int npart – number of particles
+list of blocks  – returned by routine createMesh
+float domainbnds[NDIM][HIGH] – returned by createMesh
+Its output is:
+Data structure for particles where for each particle there is
+int blkID – the block of the mesh on which the particle resides – 
+                 this can be determined using function getBlkID
+float coords[NDIM] the position of the particle
+
+
+
+
+In a separate file write a program that will create this mesh and the lattice of particles The program should prompt user to provide  values of all inputs for createMesh and createLattice in this order 
+NDIM 
+NX 
+lbnd in one line 
+ubnd in one line 
+nblk 
+boundaries[1] … boundaries[NDIM] in one line
+Npart
+It should first print out all the values that it read
+After the mesh is created it should print all the information about each block in one line
+And after the lattice is created it should print all the particles information, one particle each line
+
+
+Also create a makefile to build the program using gcc
+
+
+
+
+ TEST 1 Write a test verify_mesh that reads output of a sample run from a file, the name to be provided by the user, and using the read value of input parameters creates a mesh and verifies that the created domain is correct
+
+
+TEST 2 Write a test verify_particles that  does the same for particles.
+
+
+Write a function check_particle  that confirms that a particle is associated with the right block
+
+
+
+
+write a routine move_particles that physically moves particles in the domain by
+X number of steps, X being specified by the user. For each step, each
+particle changes its position by -1.5 along each dimension. After each
+step check for each particle if it is in the same block or not. If it is not
+find its new block and update the particle. If the returned value of new block is -1, then the particle has to handle boundary conditions by calling another routine handle_boundary. In this routine the following actions are taken. At first we will assume that only periodic boundary conditions are applied. Particle may not be outside the boundary for every axis. 
+For every dimension of the particle check if it is outside the boundary. If for  any dimension it is still within the boundary do not change the coordinate along that dimension. For PERIODIC boundary conditions its new position is L + pos[d] if it outside on the LOW side and L-pos[d] if it outside on the HIGH side where L  = domainbnds[d][HIGH] - domainbnds[d][LOW]
+After all the dimensions are processed and new positions are determined along each dimension update the associated blockID.
+
+
+TEST 3 Write a test that verifies that each particle is associated with the correct block after all these moves
+
+
+Next I want to refactor the code so that I can specify different methods for moving the particles. It can be done by adding a function that takes in the current position and returns the updated position for each particle. I would like to be able to swap implementations of this function to try other methods of moving the particles. 
+
+
+In the next step I would like to update handling of boundary conditions so that OUTFLOW and REFLECTIVE boundary conditions are also handled. 
+For any dimension where it is outside the boundary and the boundary condition is OUTFLOW along that dimension, the particle is leaving the domain, and it should be removed from the list.
+For any dimension where the particle is outside the boundary and the boundary condition is REFLECTIVE its new position is 2*domainbnds[d][e] - pos[d] where d is the dimension, and e is LOW or HIGH depending on which side of the domain the particle is outside.
