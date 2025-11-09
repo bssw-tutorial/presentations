@@ -91,6 +91,7 @@ int main(void) {
                 fclose(fp);
                 return 1;
             }
+	    p++;
             p = strchr(p, ' ');
         }
     }
