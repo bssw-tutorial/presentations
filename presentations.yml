@@ -81,3 +81,7 @@ repro-notebooks: Improving Reproducibility Through Better Software Practices
 dev-test-llm: Responsible Software Development with LLMs
 #
 testing: Software Testing and Verification
+#
+# New to HPC Asia 2026
+#
+codescribe: Code Translation from Fortran to C++ using CodeScribe
